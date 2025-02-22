@@ -18,7 +18,7 @@
 
     <script>
         // Initialize EmailJS with your user ID
-        emailjs.init('zmHbpVSNqrK7wMe5T');  // Replace with your actual EmailJS user ID
+        emailjs.init('zmHbpVSNqrK7wMe5T');  // Replace 'your_user_id' with your actual EmailJS user ID
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -112,6 +112,19 @@
 
         .cta-button:hover {
             background: linear-gradient(45deg, #FFD700, #FF8C00);
+        }
+
+        /* Bottom Left Symbol */
+        .bottom-left-symbol {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 0.8rem;
+            color: #FF8C00;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px 12px;
+            border-radius: 5px;
         }
 
         /* About Us Widget (bottom-right) */
@@ -227,7 +240,14 @@
             }
         }
 
+        /* Custom Styling for the Join Waitlist Modal Title */
+        #waitlist-modal .text-2xl {
+            background: -webkit-linear-gradient(45deg, #FF8C00, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
+
 </head>
 <body>
     <!-- Particle.js Background -->
@@ -295,15 +315,15 @@
         function submitForm() {
             var email = document.getElementById("email").value;
 
-            // Check if email is empty
+            // Ensure the email input is valid
             if (!email) {
                 alert("Please enter a valid email address.");
                 return;
             }
 
-            // EmailJS template parameters
+            // Template parameters to send to EmailJS
             var templateParams = {
-                email: email
+                message: email  // Only send the email entered by the user
             };
 
             console.log("Sending email with the following data:", templateParams);  // Debug log
@@ -320,17 +340,9 @@
                     alert('Something went wrong, please try again.');  // Alert user on failure
                 });
         }
+    </script>
 
-        // Open About Us Modal
-        function openAboutUs() {
-            document.getElementById('about-us-modal').style.display = 'flex';
-        }
-
-        // Close About Us Modal
-        function closeAboutUs() {
-            document.getElementById('about-us-modal').style.display = 'none';
-        }
-
+    <script>
         window.onload = function() {
             particlesJS('particles-js', {
                 particles: {
