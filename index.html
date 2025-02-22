@@ -13,6 +13,14 @@
     <link rel="icon" href="favicon-48x48.png" sizes="48x48" type="image/png">
     <link rel="apple-touch-icon" href="apple-icon-180x180.png" sizes="180x180">
 
+    <!-- Include EmailJS -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <script>
+        // Initialize EmailJS with your user ID
+        emailjs.init('zmHbpVSNqrK7wMe5T');  // Replace 'your_user_id' with your actual EmailJS user ID
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <style>
@@ -290,9 +298,9 @@
         <div class="bg-white p-6 rounded-lg shadow-lg max-w-md text-center">
             <h2 class="text-2xl font-bold">Join the Waitlist</h2>
             <p class="mt-2 text-gray-700">Secure your spot now and gain early access benefits!</p>
-            <form action="https://formsubmit.co/zachariababecoff@gmail.com" method="POST" class="mt-4" id="waitlistForm">
-                <input type="email" name="email" required placeholder="Enter your email" class="p-3 border rounded-md w-full text-gray-900 text-lg">
-                <button type="submit" class="cta-button mt-3 w-full">
+            <form id="waitlistForm" class="mt-4">
+                <input type="email" id="email" required placeholder="Enter your email" class="p-3 border rounded-md w-full text-gray-900 text-lg">
+                <button type="button" onclick="submitForm()" class="cta-button mt-3 w-full">
                     Join Now
                 </button>
             </form>
@@ -303,38 +311,31 @@
     </div>
 
     <script>
-        /* Typing Effect */
-        const text = "AI-Driven Banner Optimization";
-        let i = 0;
-        function typeEffect() {
-            const typingElement = document.getElementById("typing");
-            if (i < text.length) {
-                typingElement.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeEffect, 100);
-            }
+        // Function to submit the email without redirecting
+        function submitForm() {
+            var email = document.getElementById("email").value;
+
+            // EmailJS template parameters
+            var templateParams = {
+                email: email
+            };
+
+            // Send the email via EmailJS
+            emailjs.send('service_5649uzv', 'template_jctkbwb', templateParams) // Replace with your actual service and template IDs
+                .then(function(response) {
+                    console.log('SUCCESS!', response);
+                    alert('Thank you for joining the waitlist!');  // Alert user on success
+                    document.getElementById("waitlistForm").reset();  // Reset form after submission
+                    document.getElementById('waitlist-modal').classList.add('hidden'); // Close modal
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Something went wrong, please try again.');  // Alert user on failure
+                });
         }
+    </script>
 
-        function openAboutUs() {
-            document.getElementById('about-us-modal').style.display = 'flex';
-        }
-
-        function closeAboutUs() {
-            document.getElementById('about-us-modal').style.display = 'none';
-        }
-
-        // Track when users click the "Join Waitlist" widget
-        document.getElementById("join-waitlist-widget").addEventListener("click", function() {
-            fbq('track', 'Lead');  // Track the Lead event when the widget is clicked
-        });
-
-        // Facebook Pixel Event on Waitlist Form Submission
-        document.getElementById("waitlistForm").addEventListener("submit", function() {
-            fbq('track', 'Lead');  // Trigger Facebook Pixel Lead event on form submission
-        });
-
+    <script>
         window.onload = function() {
-            typeEffect();
             particlesJS('particles-js', {
                 particles: {
                     number: {
