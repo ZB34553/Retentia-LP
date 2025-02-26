@@ -2,6 +2,48 @@
 <html lang="en">
 <head>
 
+    <!-- Banner Testing Section -->
+<section class="banner-testing-section">
+    <h2 class="section-title">See Retentia in Action</h2>
+    <p class="section-description">
+        Upload your banners and let Retentia automatically test and display the best-performing image, headline, and CTA for each visitor.
+    </p>
+    
+    <!-- Visual of Retentia in Action -->
+    <div class="banner-visual-container">
+        <!-- Mockup of the banner testing -->
+        <div class="mockup">
+            <div class="banner-test-container">
+                <!-- Example of how banners will look on the website -->
+                <div class="banner-variation" id="banner1">
+                    <img src="banner-image1.jpg" alt="Banner 1" class="banner-image">
+                    <h3 class="banner-headline">Headline 1</h3>
+                    <p class="banner-sub-headline">Sub-headline 1</p>
+                    <button class="cta-button">CTA 1</button>
+                </div>
+                <div class="banner-variation" id="banner2">
+                    <img src="banner-image2.jpg" alt="Banner 2" class="banner-image">
+                    <h3 class="banner-headline">Headline 2</h3>
+                    <p class="banner-sub-headline">Sub-headline 2</p>
+                    <button class="cta-button">CTA 2</button>
+                </div>
+                <div class="banner-variation" id="banner3">
+                    <img src="banner-image3.jpg" alt="Banner 3" class="banner-image">
+                    <h3 class="banner-headline">Headline 3</h3>
+                    <p class="banner-sub-headline">Sub-headline 3</p>
+                    <button class="cta-button">CTA 3</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Action Button -->
+    <div class="action-button-container">
+        <button class="cta-button">Start Testing Today</button>
+    </div>
+</section>
+
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -25,6 +67,97 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <style>
+
+        /* Styling for the section */
+.banner-testing-section {
+    padding: 50px 20px;
+    background-color: #1A1A2E; /* Dark background */
+    text-align: center;
+    color: white;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(45deg, #FF8C00, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+/* Styling for the mockup container */
+.banner-visual-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mockup {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Banner variations inside the mockup */
+.banner-variation {
+    width: 30%;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.banner-headline {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.banner-sub-headline {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #FFD700;
+}
+
+.cta-button {
+    background: -webkit-linear-gradient(45deg, #FF8C00, #FFD700);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 12px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+    margin-top: 15px;
+}
+
+.cta-button:hover {
+    background: linear-gradient(45deg, #FFD700, #FF8C00);
+}
+
+/* Styling for the action button */
+.action-button-container {
+    margin-top: 40px;
+}
+
+.action-button-container .cta-button {
+    padding: 12px 40px;
+    font-size: 1.2rem;
+}
+
         /* Fullscreen Dynamic Background */
         body, html {
             margin: 0;
