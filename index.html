@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T53TQVV9');</script>
+<!-- End Google Tag Manager -->
+    
     <meta charset="UTF-8">
     <title>Retentia - AI-Powered Banner Testing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +49,7 @@
             background: transparent;
             padding: 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             z-index: 1000;
             backdrop-filter: blur(10px);
@@ -75,6 +84,12 @@
             margin-top: 80px;
         }
 
+        .hero-text-paragraph {
+        padding: 0 20px; /* Add padding to left and right */
+        max-width: 80%; /* Set a max width to prevent the text from going edge-to-edge */
+        margin: 0 auto; /* Center the text */
+    }
+
         .hero-text h1 {
             font-size: 3rem;
             font-weight: bold;
@@ -97,9 +112,19 @@
             color: white;
             font-weight: bold;
             border-radius: 8px;
-            padding: 12px 20px;
+            padding: 12px 30px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             transition: background 0.3s ease;
+        }
+     
+        @media screen and (max-width: 600px) {
+    .cta-button {
+        padding: 12px 40px; /* Slightly larger padding on mobile */
+        font-size: 1.1rem; /* Optionally increase the font size for mobile */
+    }
+             .coming-soon-text {
+        font-size: 0.75rem; /* Smaller font size for mobile */
+    }
         }
 
         .cta-button:hover {
@@ -128,6 +153,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             cursor: pointer;
             position: fixed;
+            font-weight: bold;
             bottom: 20px;
             left: 20px;
             font-size: 1.0rem;
@@ -163,12 +189,12 @@
             position: relative;
         }
 
-        .about-us-modal h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            background: -webkit-linear-gradient(45deg, #FFD700, #FF8C00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+    .about-us-modal h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        background: -webkit-linear-gradient(45deg, #FF8C00, #FFD700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         }
 
         /* Founder Info */
@@ -238,26 +264,111 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+          #particles-js {
+           #particles-js {
+        position: absolute;
+        top: 12%; /* Adjusted to lower the particles slightly */
+        left: 0;
+        width: 100%;
+        height: 88%; /* Ensures particles take up the full height */
+        z-index: -1; /* Ensure it stays in the background */
+    }
     </style>
 
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T53TQVV9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <!-- Particle.js Background -->
     <div id="particles-js"></div>
 
     <!-- Sticky Header -->
-    <header class="sticky-header">
-        <h1 class="logo">Retentia</h1>
+ <header class="sticky-header">
+    <h1 class="logo">Retentia</h1>
+    <div class="top-right-section">
+        <!-- Get Early Access Button -->
         <button onclick="document.getElementById('waitlist-modal').classList.remove('hidden')" class="cta-button" id="join-waitlist-widget">
-            Join Waitlist
+            Join Waitlist 🚀
         </button>
+
+        <!-- Coming Soon Text Box -->
+        <div class="coming-soon-text">
+            <span>Coming Soon</span>
+        </div>
+    </div> 
     </header>
 
     <!-- Hero Text -->
     <div class="hero-text fade-in">
         <h1 id="typing"></h1>
-        <p>Retentia automatically tests and optimizes homepage banners to maximize conversions.</p>
+         <p class="hero-text-paragraph"> Retentia’s AI agent continuously tests, adapts, and optimizes your homepage banners maximizing conversions with zero manual effort.</p>
     </div>
+    
+    <style>
+
+    /* Mobile Styles */
+    @media screen and (max-width: 600px) {
+        .hero-text-paragraph {
+            max-width: 90%; /* For mobile, reduce max-width further */
+        }
+    }
+        
+.top-right-section {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+}
+    @media screen and (max-width: 600px) {
+    .top-right-section {
+        right: 30px; /* Moves the button slightly more to the left for mobile */
+        top: 20px; /* Adjust the top position to fit mobile screens better */
+    }
+
+    .cta-button {
+        padding: 12px 40px; /* Adjust button padding for mobile screens */
+    }
+}
+        
+.coming-soon-text {
+    background: -webkit-linear-gradient(45deg, #FF8C00, #FFD700); /* Gradient from orange to gold */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text transparent so the gradient shows */
+    font-size: 0.8rem; /* Smaller font size */
+    padding: 5px 12px; /* Adjust padding to make the box smaller */
+    border-radius: 25px; /* Oval shape for more elegance */
+    display: inline-block; /* Make it adjust based on content */
+    font-style: italic; /* Italics for a softer, stylish look */
+    font-weight: normal; /* Keep it lighter for better readability */
+    text-transform: uppercase; /* Make it all caps for emphasis */
+    letter-spacing: 1px; /* Slightly spaced letters for style */
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    margin-top: 5px; /* Space between button and text */
+    animation: fadeInText 1s ease-out; /* Optional fade-in effect */
+    text-align: center;
+}
+        
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#join-waitlist-widget {
+    display: block;
+    margin-bottom: 5px; /* Space between the button and the text */
+}
+        
+</style>
 
     <!-- About Us Widget -->
     <div class="about-us-widget" onclick="openAboutUs()">
@@ -285,25 +396,48 @@
         </div>
     </div>
 
-    <!-- Join Waitlist Modal -->
-    <div id="waitlist-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
-        <div class="bg-white p-6 rounded-lg shadow-lg max-w-md text-center">
-            <h2 class="text-2xl font-bold">Join the Waitlist</h2>
-            <p class="mt-2 text-gray-700">Secure your spot now and gain early access benefits!</p>
-            <!-- Formspree integration -->
-            <form action="https://formspree.io/f/mrbedrbr" method="POST" class="mt-4">
-                <input type="email" name="email" required placeholder="Enter your email" class="p-3 border rounded-md w-full text-gray-900 text-lg">
-                <button type="submit" class="cta-button mt-3 w-full">
-                    Join Now
-                </button>
-            </form>
-            <button onclick="document.getElementById('waitlist-modal').classList.add('hidden')" class="mt-4 text-gray-500">
-                Close
+<!-- Join Waitlist Modal -->
+<div id="waitlist-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md text-center">
+        <h2 class="text-2xl font-bold">Get Early Access!</h2>
+        <p class="mt-2 text-gray-700">Join early to get priority access and exclusive early perks!</p>
+        <!-- Formspree Integration -->
+        <form action="https://formspree.io/f/mrbedrbr" method="POST" class="mt-4">
+            <input type="email" name="email" required placeholder="Enter your email" class="p-3 border rounded-md w-full text-gray-900 text-lg">
+            <button type="submit" class="cta-button mt-3 w-full bg-blue-600 text-white p-3 rounded-lg text-lg hover:bg-blue-700 transition">
+                Submit 
             </button>
-        </div>
+        </form>
+        <button onclick="document.getElementById('waitlist-modal').classList.add('hidden')" class="mt-4 text-gray-500 hover:text-gray-700 transition">
+            Maybe Later
+        </button>
     </div>
+</div>
+
 
     <script>
+        
+  // Typing Effect
+        const text = "Effortless homepage optimisation.";  // The text you want to appear
+        let i = 0;
+        function typeEffect() {
+            const typingElement = document.getElementById("typing");
+            if (i < text.length) {
+                typingElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, 100);  // Adjust speed (100ms between each character)
+            }
+        }
+        // Open About Us Modal
+        function openAboutUs() {
+            document.getElementById('about-us-modal').style.display = 'flex';
+        }
+
+        // Close About Us Modal
+        function closeAboutUs() {
+            document.getElementById('about-us-modal').style.display = 'none';
+        }
+
         window.onload = function() {
             particlesJS('particles-js', {
                 particles: {
@@ -383,7 +517,9 @@
                     }
                 }
             });
+        typeEffect();
         };
     </script>
+    
 </body>
 </html>
